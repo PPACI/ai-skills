@@ -13,11 +13,11 @@ Skills are precision behavioral tools. They encode specific patterns, vocabulary
 - Removing items that are referenced elsewhere in the skill
 - Contradicting the skill's underlying logic
 - Introducing the very patterns the skill is designed to eliminate
-- Breaking compatibility with the superpowers plugin format
+- Breaking compatibility with the Claude Code skills format
 
 Skills fail silently. There is no test suite that catches a skill that's become vague or self-contradictory. The README is your specification — read it.
 
-## Superpowers Format Requirements
+## Skills Format Requirements
 
 Every `SKILL.md` must have YAML frontmatter with exactly two fields:
 
@@ -30,7 +30,7 @@ description: Use when [specific triggering condition] to [what it does].
 
 **Rules:**
 - `name`: kebab-case, matches the directory name
-- `description`: must start with `"Use when..."` — this is how the superpowers plugin decides when to invoke the skill
+- `description`: must start with `"Use when..."` — this is how Claude Code and other Agent Skills-compatible tools decide when to invoke the skill
 - `description` must be ≤ 1024 characters total
 - Do **not** summarise the workflow in the description — that belongs in the skill body
 - No other frontmatter fields are allowed

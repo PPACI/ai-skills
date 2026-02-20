@@ -119,7 +119,7 @@ Or better: describe what the monument actually is and why it was built.
 
 ## How to invoke this skill
 
-With the [superpowers plugin](https://github.com/superpowers-sh/superpowers) installed:
+Once installed (see the root README for installation steps):
 
 ```
 Use the remove-ai-slop skill to review this draft.

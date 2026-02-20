@@ -1,6 +1,6 @@
 # AI Skills
 
-A collection of [Claude Code](https://claude.ai/code) skills for better AI-assisted writing and development. Each skill is designed to be invoked via the [superpowers plugin](https://github.com/superpowers-sh/superpowers).
+A collection of [Claude Code](https://claude.ai/code) skills for better AI-assisted writing and development. Each skill follows the [Agent Skills](https://agentskills.io) open standard, supported natively by Claude Code and Codex CLI.
 
 ## Skills
 
@@ -10,15 +10,33 @@ A collection of [Claude Code](https://claude.ai/code) skills for better AI-assis
 
 ## Installation
 
-### Prerequisites
+### Claude Code
 
-These skills require the [superpowers Claude Code plugin](https://github.com/superpowers-sh/superpowers). Install it first.
+```bash
+# Personal (all projects)
+mkdir -p ~/.claude/skills/remove-ai-slop
+cp -r skills/remove-ai-slop/. ~/.claude/skills/remove-ai-slop/
 
-### Adding Skills
+# Project-level (this project only)
+mkdir -p .claude/skills/remove-ai-slop
+cp -r skills/remove-ai-slop/. .claude/skills/remove-ai-slop/
+```
 
-1. Clone this repository or copy the skill directories you want
-2. Place them in your superpowers skills directory (see superpowers docs for the exact path)
-3. Invoke them in Claude Code with the `Skill` tool or via `/skill-name`
+See the [Claude Code skills docs](https://code.claude.com/docs/en/skills) for more detail.
+
+### Codex CLI
+
+```bash
+# Personal (all repositories)
+mkdir -p ~/.agents/skills/remove-ai-slop
+cp -r skills/remove-ai-slop/. ~/.agents/skills/remove-ai-slop/
+
+# Repository-level
+mkdir -p .agents/skills/remove-ai-slop
+cp -r skills/remove-ai-slop/. .agents/skills/remove-ai-slop/
+```
+
+See the [Codex Agent Skills docs](https://developers.openai.com/codex/skills/) for more detail.
 
 ## Using a Skill
 
@@ -34,12 +52,14 @@ Or via slash command:
 /remove-ai-slop
 ```
 
+This follows the [Agent Skills open standard](https://agentskills.io).
+
 ## Contributing
 
 Contributions welcome. Before submitting a skill:
 
 1. Read [CLAUDE.md](CLAUDE.md) — it explains the format requirements and editing discipline
-2. Each skill needs both `SKILL.md` (machine-readable, superpowers-compatible) and `README.md` (human-readable with examples)
+2. Each skill needs both `SKILL.md` (machine-readable, Agent Skills-compatible) and `README.md` (human-readable with examples)
 3. The `description` field in the YAML frontmatter must start with `"Use when..."` and be ≤ 1024 characters
 4. Include before/after examples in the README
 5. Open a PR with a brief explanation of what problem the skill solves
